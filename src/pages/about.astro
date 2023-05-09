@@ -1,0 +1,56 @@
+---
+import fm from 'front-matter'
+import Layout from '../layouts/Layout.astro';
+import showdown from 'showdown'
+var converter = new showdown.Converter()
+import { log } from 'astro/dist/core/logger/core';
+const session = {}
+const response = await fetch('http://localhost:3000/api/clhdtusbo0000lbyc6y8yntkc/note/clhghtxu80002lb6club9wq8i/show');
+const data = await response.json();
+var content = fm(data[0].body)
+
+session.main = {
+	title: data[0].title,
+	body: converter.makeHtml(data[0].body),
+	img: data[0].img
+}
+
+
+---
+<Layout title="Welcome to Astro.">
+	<main>
+		
+      <section class="mt-50 pb-12 lg:pt-[70px] lg:pb-[90px] ">
+        <div class="container mx-auto ">
+           
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <div class="-mx-4 flex flex-wrap ">
+                        <div class="w-full px-4 ">
+                            <div class="mx-auto mb-12 max-w-[510px] text-left lg:mb-20">
+                                <h2
+                                    class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]"
+                                >
+                                    {session.main.title}
+                                </h2>
+                                <p class="text-base text-body-color" set:html={session.main.body}>
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+                <div>
+                    <img src={session.main.img}/>
+                </div>
+              </div>
+           
+           
+            
+            
+        </div>
+      </section>
+		
+	</main>
+</Layout>

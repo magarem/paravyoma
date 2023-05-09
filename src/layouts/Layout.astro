@@ -1,0 +1,63 @@
+---
+import Header from '../components/Header.astro'; 
+import Menubar from '../components/Menubar.astro'; 
+
+import fs from 'fs'
+import fm from 'front-matter'
+
+const response = await fetch('http://localhost:3000/api/clhdtusbo0000lbyc6y8yntkc/note/clhf7y0nr0000lbi8ety63ony/show');
+const data = await response.json();
+var content = fm(data[0].body)
+var logo = content.attributes.logo
+var menu = content.attributes.menu
+// console.log('log:', content.attributes.menu);
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<Header title={title}/>
+	<body>
+	<Menubar/>
+		<slot />
+	
+	<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+		<div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://magaweb.com.br/" class="hover:underline">Magaweb</a>. All Rights Reserved.
+		</span>
+		<ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+			{menu.map(item=>(
+				<li>
+				<a
+					href={item.split('|')[1]}
+					class="flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex"
+				>
+					{item.split('|')[0]}
+				</a>
+				</li>
+			))}
+		</ul>
+		</div>
+	</footer>
+
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

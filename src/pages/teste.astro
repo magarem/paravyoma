@@ -1,0 +1,10 @@
+---
+import { supabase } from '../supabase'
+let { data, error } = await supabase
+        .from('note')
+        .select('*')
+console.log('log:', data);
+---
+<p class='text-2xl'>Title: {data[0].title}</h1>
+<p class='text-2xl'>Body: {data[0].body}</h1>
+
