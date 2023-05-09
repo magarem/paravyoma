@@ -4,8 +4,8 @@ import Menubar from '../components/Menubar.astro';
 
 import fs from 'fs'
 import fm from 'front-matter'
-
-const response = await fetch('http://localhost:3000/api/clhdtusbo0000lbyc6y8yntkc/note/clhf7y0nr0000lbi8ety63ony/show');
+const URL = import.meta.env.PUBLIC_URL
+const response = await fetch(URL + '/api/clhdtusbo0000lbyc6y8yntkc/note/clhf7y0nr0000lbi8ety63ony/show');
 const data = await response.json();
 var content = fm(data[0].body)
 var logo = content.attributes.logo

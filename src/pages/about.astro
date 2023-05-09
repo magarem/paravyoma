@@ -5,7 +5,7 @@ import showdown from 'showdown'
 var converter = new showdown.Converter()
 import { log } from 'astro/dist/core/logger/core';
 const session = {}
-const URL = import.meta.env.URL
+const URL = import.meta.env.PUBLIC_URL
 const response = await fetch(URL + '/api/clhdtusbo0000lbyc6y8yntkc/note/clhghtxu80002lb6club9wq8i/show');
 const data = await response.json();
 var content = fm(data[0].body)
