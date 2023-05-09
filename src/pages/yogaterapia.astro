@@ -5,7 +5,8 @@ import showdown from 'showdown'
 var converter = new showdown.Converter()
 import { log } from 'astro/dist/core/logger/core';
 const session = {}
-const response = await fetch('http://localhost:3000/api/clhdtusbo0000lbyc6y8yntkc/note/clhgirhcr0004lb6ct5b17jze/show');
+const URL = import.meta.env.URL
+const response = await fetch(URL + '/api/clhdtusbo0000lbyc6y8yntkc/note/clhgirhcr0004lb6ct5b17jze/show');
 const data = await response.json();
 var content = fm(data[0].body)
 

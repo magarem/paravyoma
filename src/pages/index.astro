@@ -2,7 +2,8 @@
 import fm from 'front-matter'
 import Layout from '../layouts/Layout.astro';
 const session = {}
-const response = await fetch('/api/clhdtusbo0000lbyc6y8yntkc/note/clhfizxr40002lbi8fqmhhye8/show');
+const URL = import.meta.env.URL
+const response = await fetch(URL + '/api/clhdtusbo0000lbyc6y8yntkc/note/clhfizxr40002lbi8fqmhhye8/show');
 const data = await response.json();
 var content = fm(data[0].body)
 
@@ -13,7 +14,7 @@ session.header = {
 	img: data[0].img,
 	file: content.attributes.file,
 }
-const response2 = await fetch('/api/clhdtusbo0000lbyc6y8yntkc/note/clhfkszgr0000lb6ceflrxssh/show');
+const response2 = await fetch(URL + '/api/clhdtusbo0000lbyc6y8yntkc/note/clhfkszgr0000lb6ceflrxssh/show');
 const data2 = await response2.json();
 var content2 = fm(data2[0].body)
 console.log('log:', content2);
