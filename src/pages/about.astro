@@ -21,34 +21,28 @@ session.main = {
 <Layout title="Welcome to Astro.">
 	<main>
 		
-      <section class="mt-50 pb-12 lg:pt-[70px] lg:pb-[90px] ">
-        <div class="container mx-auto ">
-           
-            <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
-                <div>
-                    <div class="-mx-4 flex flex-wrap ">
-                        <div class="w-full px-4 ">
-                            <div class="mx-auto mb-12 max-w-[510px] text-left lg:mb-20">
-                                <h2
-                                    class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]"
-                                >
-                                    {session.main.title}
-                                </h2>
-                                <p class="text-base text-body-color" set:html={session.main.body}>
-                                </p>
-                            </div>
-                            
+      <section class="relative bg-white pt-[12px] pb-[110px] lg:pt-[80px]">
+        <div class="container mx-auto text-center">
+            <div class="-mx-1 flex flex-wrap">
+                <div class="w-full px-4 lg:w-5/12">
+                    <div class="w-full px-4 ">
+                        <div class="mx-auto mb-12 max-w-[510px] text-left lg:mb-20">
+                            <h2
+                                class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]"
+                            >
+                                {session.main.title}
+                            </h2>
+                            <p class="text-base text-body-color" set:html={session.main.body}>
+                            </p>
                         </div>
+                        
                     </div>
                 </div>
-                <div>
+                <div class="hidden px-4 lg:block lg:w-1/12"></div>
+                <div class="w-full px-4 lg:w-6/12 text-center">
                     <img class="rounded-lg" src={session.main.img}/>
                 </div>
-              </div>
-           
-           
-            
-            
+            </div>
         </div>
       </section>
 		
