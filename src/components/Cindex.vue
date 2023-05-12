@@ -1,7 +1,7 @@
----
+<script setup>
 import fm from 'front-matter'
 
-import Card from '../components/Card.astro';	
+import Card from '../components/Card.vue';	
 const session = {}
 const URL = import.meta.env.PUBLIC_URL
 const response = await fetch(URL + '/api/clhdtusbo0000lbyc6y8yntkc/note/clhfizxr40002lbi8fqmhhye8/show');
@@ -29,10 +29,10 @@ const p = (str, index) => {
 	return str.split('|')[index]
 }
 
----
+</script>
 
-
-	<main>
+<template>
+<main>
 		<div class="relative bg-white pt-[12px] pb-[110px] lg:pt-[80px]">
 			<div class="container mx-auto">
 				<div class="-mx-1 flex flex-wrap">
@@ -41,23 +41,23 @@ const p = (str, index) => {
 						<h1
 							class="mb-3 text-4xl font-bold leading-snug text-dark sm:text-[42px] lg:text-[40px] xl:text-[42px]"
 						>
-							{session.header.txt1}
+							{{session.header.txt1}}
 						</h1>
 						<p class="mb-8 max-w-[480px] text-base text-body-color">
-							{session.header.body}
+							{{session.header.body}}
 						</p>
 						<ul class="flex flex-wrap items-center">
 							<li>
 							<a
-								href={p(session.header.btn[0], 1)}
+								:href="p(session.header.btn[0], 1)"
 								class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
 							>
-								{p(session.header.btn[0], 0)}
+								{{p(session.header.btn[0], 0)}}
 							</a>
 							</li>
 							<li>
 							<a
-								href={p(session.header.btn[1], 1)}
+								:href="p(session.header.btn[1], 1)"
 								class="inline-flex items-center justify-center py-4 px-6 text-center text-base font-normal text-body-color hover:text-primary sm:px-10 lg:px-8 xl:px-10"
 							>
 								<span class="mr-2">
@@ -89,7 +89,7 @@ const p = (str, index) => {
 									/>
 								</svg>
 								</span>
-								{p(session.header.btn[1], 0)}
+								{{p(session.header.btn[1], 0)}}
 							</a>
 							</li>
 						</ul>
@@ -124,7 +124,7 @@ const p = (str, index) => {
 						<div class="lg:ml-auto lg:text-right">
 						<div class="relative z-10 inline-block pt-11 lg:pt-0">
 							<img
-							src={session.header.img}
+							:src="session.header.img"
 							alt="hero"
 							class="rounded-lg max-w-full lg:ml-auto"
 							/>
@@ -180,25 +180,20 @@ const p = (str, index) => {
 					<h2
 						class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]"
 					>
-						{session.beneficios.title}
+						{{session.beneficios.title}}
 					</h2>
 					<p class="font-bold text-sky-400/150 italic text-base text-body-color">
-						{session.beneficios.subtitle}
+						{{session.beneficios.subtitle}}
 					</p>
 				</div>
 			</div>
 			</div>
 			<div class="flex flex-wrap">
-			
-			{session.beneficios.itens.map((item)=>(
-				
-				<div class="w-full px-4 md:w-1/2 lg:w-1/3 ">
-					<Card body={item.body} title={item.titulo} href="/"/>
+				<div v-for="item in session.beneficios.itens" class="w-full px-4 md:w-1/2 lg:w-1/3 ">
+					<Card :body="item.body" :title="item.titulo" />
 				</div>
-			))}
-	
 			</div>
 		</div>
 		</section>
 	</main>
-
+</template>
