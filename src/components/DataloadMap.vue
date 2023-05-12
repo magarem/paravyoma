@@ -1,9 +1,5 @@
-<!--
-Say Hello World with Vue!
--->
-
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import fm from 'front-matter'
 const props = defineProps(['target', 'type', 'field'])
 const URL = import.meta.env.PUBLIC_URL
@@ -17,8 +13,14 @@ if (props.type=="fm"){
 }else{
   ret = data[0][props.field]
 }
+
+const publishedBooksMessage = computed(() => {
+  return content.attributes[props.field]
+})
 </script>
 
 <template>
-  {{ ret }}
+  <li v-for="(item, index) in publishedBooksMessage">
+  {{ item }} - {{ index }}
+  </li>
 </template>
