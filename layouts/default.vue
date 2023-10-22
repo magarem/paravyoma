@@ -10,9 +10,11 @@
                     </span>
                 </div>
             </footer>
-<Script  src="node_modules/lite-youtube-embed/src/lite-yt-embed.js"></Script>
-
-        </body>
+    <Script>
+		document.querySelector('.hamburger').addEventListener('click', () => {
+		  document.querySelector('.nav-links').classList.toggle('expanded');
+		});
+	</Script>        </body>
     </html>
 </template>
 <script setup>

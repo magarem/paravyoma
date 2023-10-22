@@ -1,4 +1,6 @@
 <script setup>
+import LiteYouTubeEmbed from 'vue-lite-youtube-embed'
+import 'vue-lite-youtube-embed/style.css'
 const props = defineProps(['href', 'title', 'body'])
 console.log(props);
 </script>
@@ -9,9 +11,14 @@ console.log(props);
 			{{props.title}}
 			<span>&rarr;</span>
 		</h2>
-		<div class="aspect-w-16 aspect-h-9">
-			<iframe :src="props.body[0]" :width="props.body[1]" :height="props.body[2]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
+		<!-- <div class="aspect-w-16 aspect-h-9"> -->
+			<!-- <iframe class="w-full aspect-video" :src="props.body[0]" :width="props.body[1]" :height="props.body[2]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+			
+			<LiteYouTubeEmbed
+        :id="props.body[0]"
+        title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
+    />
+			<!-- </div> -->
 	</a>
 </li>
 </template>

@@ -1,4 +1,5 @@
 <script setup>
+
   const route = useRoute()
 	const { data } = await useAsyncData(() => queryContent(route.params.slug[0]).findOne());
 	// const dataValue = data.value
@@ -75,8 +76,25 @@
 					
 						</div>
 					</div>
-          <div class="  grid grid-cols-2 gap-4" v-if="data.videos">
-					<div v-for="item in data.videos"><VideoCard  :body="item" title="video" href="/"/></div>
+					<div style="width: 400px;">
+          
+    </div>
+          <div class="grid md:grid-cols-3 gap-4" v-if="data.videos">
+					<div v-for="item in data.videos" _style="width: 400px;">
+					
+						<!-- <LiteYouTubeEmbed class="w-full aspect-video ..."
+        :id="item[0]"
+        title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
+    /> -->
+						<!-- <VideoCard  :body="item" title="video" href="/"/> -->
+						<ModalVideo
+							:thumb="'https://img.youtube.com/vi/'+item+'/0.jpg'"
+							:thumbWidth="400"
+							:thumbHeight="300"
+							:video="item"
+							:videoWidth="1920"
+							:videoHeight="1080" />
+					</div>
               
           </div>
 					

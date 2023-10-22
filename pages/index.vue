@@ -36,12 +36,8 @@
 		<div class="relative bg-white pt-[12px] pb-[110px] lg:pt-[80px]">
 			<div class="container mx-auto">
 				<div class="-mx-1 flex flex-wrap">
-					
-					
-					
 					<div class="w-full px-4 lg:w-5/12">
 						<div class="hero-content">
-                            
 						<h1
 							class="mb-3 text-4xl font-bold leading-snug text-dark sm:text-[42px] lg:text-[40px] xl:text-[42px]"
 						>
@@ -105,14 +101,14 @@
 					<div class="w-full px-4 lg:w-6/12">
 						<div class="lg:ml-auto lg:text-right">
 						<div class="relative z-10 inline-block pt-11 lg:pt-0">
-							<div>
-								
-							</div>
 							<img
 							:src="home.img"
 							alt="hero"
 							class="rounded-lg max-w-full lg:ml-auto"
 							/>
+							<!-- <div class="bg-indigo-300 ...">
+								<img :src="home.img" class="object-cover h-48 w-96">
+							</div> -->
 							<span class="absolute -left-8 -bottom-8 z-[-1]">
 							<svg
 								width="93"
@@ -150,7 +146,7 @@
 							</span>
 							
 							<div class="mt-10">
-								<iframe width="700" height="405" src="https://www.youtube.com/embed/8D1XQ0QSnm0?si=n7iniaTVN5OTOeZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe class="w-full aspect-video ..." src="https://www.youtube.com/embed/8D1XQ0QSnm0?si=n7iniaTVN5OTOeZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</div>
 						</div>
 						</div>
