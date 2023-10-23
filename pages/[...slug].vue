@@ -79,6 +79,7 @@
 					<div style="width: 400px;">
           
     </div>
+	
           <div class="grid md:grid-cols-3 gap-4" v-if="data.videos">
 					<div v-for="item in data.videos" _style="width: 400px;">
 					
@@ -87,13 +88,14 @@
         title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
     /> -->
 						<!-- <VideoCard  :body="item" title="video" href="/"/> -->
-						<ModalVideo
+						<VideoShow videoChannel="youtube" :videoId="item" />
+						<!-- <ModalVideo
 							:thumb="'https://img.youtube.com/vi/'+item+'/0.jpg'"
 							:thumbWidth="400"
 							:thumbHeight="300"
 							:video="item"
 							:videoWidth="1920"
-							:videoHeight="1080" />
+							:videoHeight="1080" /> -->
 					</div>
               
           </div>
