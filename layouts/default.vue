@@ -10,6 +10,7 @@
                     </span>
                 </div>
             </footer>
+			<Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></Script>
     <Script>
 		document.querySelector('.hamburger').addEventListener('click', () => {
 		  document.querySelector('.nav-links').classList.toggle('expanded');

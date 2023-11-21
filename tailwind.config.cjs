@@ -49,7 +49,7 @@ module.exports = {
     }
   },
   plugins: [
-    require('@tailwindcss/typography', '@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography', '@tailwindcss/aspect-ratio', 'flowbite/plugin'),
     // ...
   ],
-}
+};

@@ -46,7 +46,8 @@
 						<!-- <p class="mb-8 max-w-[480px] text-base text-body-color"> -->
 						<!-- <div v-if="data.body.children.length"> -->
 							<ContentRenderer class="prose" :value="home" />
-						<!-- </div> -->
+						
+							<!-- </div> -->
 						<!-- </p> -->
 						
 						<ul class="flex flex-wrap items-center">
@@ -98,9 +99,12 @@
 						</ul>
 						</div>
 					</div>
+			
+
 					<div class="w-full px-4 lg:w-6/12">
 						<div class="lg:ml-auto lg:text-right">
 						<div class="relative z-10 inline-block pt-11 lg:pt-0">
+							
 							<img
 							:src="home.img"
 							alt="hero"

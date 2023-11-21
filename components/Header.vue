@@ -10,8 +10,7 @@
         <meta name="generator" content="nuxt3" />
         <!-- <link rel="stylesheet" href="/assets/css/tailwind.css" /> -->
         <link rel="stylesheet" href="node_modules/lite-youtube-embed/src/lite-yt-embed.css" />
-
-
+       
         <title>{{title}}</title>
     </head>
 </template>
