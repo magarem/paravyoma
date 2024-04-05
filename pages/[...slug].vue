@@ -7,16 +7,16 @@
 </script>
 
 <template>
-	<main>
+	<main v-if="data">
         
 		<div class="relative bg-white pt-[12px] pb-[110px] lg:pt-[80px]">
 			<div class="container mx-auto">
 				<div class="-mx-1 flex flex-wrap">
-                    <div class="w-full px-4 lg:w-6/12" v-if="data.img">
+                    <div class="w-full px-4 lg:w-6/12" v-if="data?.img">
 						<div class="lg:ml-auto lg:text-right">
 						<div class="relative z-10 inline-block pt-11 lg:pt-0">
 							<img
-							:src="data.img"
+							:src="data?.img"
 							alt="hero"
 							class="rounded-lg max-w-full lg:ml-auto"
 							/>

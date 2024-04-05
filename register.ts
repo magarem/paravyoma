@@ -1,4 +1,106 @@
+
 import { DB } from "https://deno.land/x/sqlite@v3.7.0/mod.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
+import {
+  Application,
+  Context,
+  helpers,
+  Router,
+} from "https://deno.land/x/oak@v12.4.0/mod.ts";
+
+
+
+const { getQuery } = helpers;
+const router = new Router();
+
+
+// Deno.serve(async (req) => {
+ 
+
+
+router
+  .get("/users", async (ctx: Context) => {
+  })
+  .get("/users/:id", async (ctx: Context) => {
+    const { id } = getQuery(ctx, { mergeParams: true });
+  })
+  .get("/users/email/:email", async (ctx: Context) => {
+    const { email } = getQuery(ctx, { mergeParams: true });
+  })
+  .get("/users/:id/address", async (ctx: Context) => {
+    const { id } = getQuery(ctx, { mergeParams: true });
+  })
+
+  .post("/register", async (ctx: Context) => {
+
+    console.log('/register');
+    
+    const body = ctx.request.body();
+
+    // console.log('--->', await body.value.trim());
+    
+    const user = await body.value
+  
+    console.log('user:', user);
+    
+    const db = new DB("teste.db"); // or new DB()
+    // Use new DB("file.db"); for a file-based database
+    db.execute(`
+      CREATE TABLE IF NOT EXISTS alunos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nome TEXT,
+      cpf TEXT,
+      email TEXT,
+      endereco TEXT,
+      fone TEXT
+      )`);
+    
+    db.transaction(() => {
+      db.query(`
+          INSERT INTO alunos 
+              (nome, cpf, email, endereco, fone) 
+          VALUES 
+              (
+              '${user.nome}', 
+              '${user.cpf}', 
+              '${user.email}', 
+              '${user.endereco}', 
+              '${user.fone}'
+              )
+      `);
+    });
+      
+    db.close()
+  
+    // return "testando!"
+    ctx.response.body = "ok"
+  })
+ 
+  .delete("/users/:id", async (ctx: Context) => {
+    const { id } = getQuery(ctx, { mergeParams: true });
+  });
+
+const app = new Application();
+// app.use(oakCors()); 
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+await app.listen({ port: 8000 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  // Open a database to be held in memory
  
 
@@ -8,51 +110,3 @@ import { DB } from "https://deno.land/x/sqlite@v3.7.0/mod.ts";
 
  // Close database to clean up resources
  
-Deno.serve(async (req) => {
-    const db = new DB("teste.db"); // or new DB()
- // Use new DB("file.db"); for a file-based database
- db.execute(`
- CREATE TABLE IF NOT EXISTS alunos (
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   nome TEXT,
-   cpf TEXT,
-   email TEXT,
-   endereco TEXT,
-   fone TEXT
- )`);
-    console.log("Method:", req.method);
-  
-    const url = new URL(req.url);
-    // console.log("Path:", url.pathname);
-    // console.log("Query parameters:", url.searchParams);
-  
-    // console.log("Headers:", req.headers);
-  
-    if (req.body) {
-        const body = JSON.parse(await req.text())
-        console.log("Body:", body);
-        // const a = body.split('&')
-        // Insert data within a transaction
-        db.transaction(() => {
-            db.query(`
-                INSERT INTO alunos 
-                    (nome, cpf, email, endereco, fone) 
-                VALUES 
-                    (
-                    '${body.nome}', 
-                    '${body.cpf}', 
-                    '${body.email}', 
-                    '${body.endereco}', 
-                    '${body.fone}'
-                    )
-                `);
-        });
-    }
-    db.close()
-    return new Response("Hello, world", {
-      status: 200,
-      headers: {
-        "content-type": "text/plain; charset=utf-8",
-      },
-    });
-  });
