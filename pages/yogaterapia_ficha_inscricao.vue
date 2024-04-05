@@ -6,41 +6,43 @@
   </div>
   <div v-else style="margin-top: 50px;">
     <form  method="post" @submit.prevent="formTest">
-      <div class="form-group row">
-        <label for="nome" class="col-4 col-form-label">Nome completo</label> 
-        <div class="col-8">
-          <input id="nome" name="nome" v-model="formData.nome" type="text" class="form-control">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+        <div class="form-group row">
+          <label for="nome" class="col-4 col-form-label">Nome completo</label> 
+          <div class="col-8">
+            <input id="nome" name="nome" v-model="formData.nome" type="text" class="form-control">
+          </div>
         </div>
+        <div class="form-group row">
+          <label for="cpf" class="col-4 col-form-label">CPF</label> 
+          <div class="col-8">
+            <input id="cpf" name="cpf"  v-model="formData.cpf" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-4 col-form-label">Email</label> 
+          <div class="col-8">
+            <input id="email" name="email"  v-model="formData.email" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="endereco" class="col-4 col-form-label">Endereço Completo com CEP</label> 
+          <div class="col-8">
+            <textarea id="endereco" name="endereco"  v-model="formData.endereco" cols="40" rows="5" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="telefone" class="col-4 col-form-label">Telefone com whatsapp</label> 
+          <div class="col-8">
+            <input id="fone" name="fone" v-model="formData.fone" type="text" class="form-control">
+          </div>
+        </div> 
       </div>
       <div class="form-group row">
-        <label for="cpf" class="col-4 col-form-label">CPF</label> 
-        <div class="col-8">
-          <input id="cpf" name="cpf"  v-model="formData.cpf" type="text" class="form-control">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" _class="btn btn-primary">Enviar formulário</button>
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="email" class="col-4 col-form-label">Email</label> 
-        <div class="col-8">
-          <input id="email" name="email"  v-model="formData.email" type="text" class="form-control">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="endereco" class="col-4 col-form-label">Endereço Completo com CEP</label> 
-        <div class="col-8">
-          <textarea id="endereco" name="endereco"  v-model="formData.endereco" cols="40" rows="5" class="form-control"></textarea>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="telefone" class="col-4 col-form-label">Telefone com whatsapp</label> 
-        <div class="col-8">
-          <input id="fone" name="fone" v-model="formData.fone" type="text" class="form-control">
-        </div>
-      </div> 
-      <div class="form-group row">
-        <div class="offset-4 col-8">
-          <button name="submit" type="submit" _class="btn btn-primary">Enviar formulário</button>
-        </div>
-      </div>
     </form>
   </div>
 
@@ -86,9 +88,9 @@ const formTest = async () => {
 </script>
 <style scoped>
 .container { 
-    width: 700px; 
-    margin-left: auto;
-    margin-right: auto; 
+    margin-left: 15%;
+    margin-right:15%;
+    width: 70%;
 }
 
 * {
@@ -105,6 +107,8 @@ textarea {
 label, textarea, input {
   width: 100%;
   display: block;
+  /* margin-right: 100px;
+  margin-left: 100px; */
 }
 input , button{
   border-color: #3c2e2e;
