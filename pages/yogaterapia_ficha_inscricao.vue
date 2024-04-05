@@ -1,5 +1,4 @@
 <template>
-{{ formData }}
 <div class="container">
   <form  method="post" @submit.prevent="formTest">
     <div class="form-group row">
@@ -51,7 +50,7 @@ const formTest = () => {
 
   if(isFormValid) { // Send the request only if there are no errors
     console.log("sss");
-    fetch('http://localhost:8000/', {
+    fetch('http://216.238.98.143:8000/', {
       method: 'POST',
         headers: {
           "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
