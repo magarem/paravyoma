@@ -52,26 +52,26 @@ router
       cpf TEXT,
       email TEXT,
       endereco TEXT,
-      fone TEXT
+      fone TEXT,
       nascimento TEXT,
       formadepagamento TEXT,
       data TEXT
       )`);
-    
+    const date_ = new Date().toLocaleDateString('pt-BR')
     db.transaction(() => {
       db.query(`
           INSERT INTO alunos 
-              (nome, cpf, email, endereco, fone) 
+              (nome, cpf, email, endereco, fone, nascimento, formadepagamento, data) 
           VALUES 
               (
               '${user.nome}', 
               '${user.cpf}', 
               '${user.email}', 
               '${user.endereco}', 
-              '${user.fone}'
-              '${user.nascimento}'
-              '${user.formadepagamento}'
-              '${new Date().toLocaleDateString('pt-BR')}'
+              '${user.fone}',
+              '${user.nascimento}',
+              '${user.formadepagamento}',
+              '${date_}'
               )
       `);
     });

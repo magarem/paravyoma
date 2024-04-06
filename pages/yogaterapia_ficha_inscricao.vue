@@ -1,11 +1,41 @@
 <template>
-<div class="container">
+<div class="container_ mx-5 lg:mx-20">
   <div v-if="formRegisterOk" style="margin: 50px;">
     <h1 style="font-size: 25px;">Dados registrados com sucesso! Bom curso.</h1>
     <br/><a href="/" class="btn">Clique aqui para ir para o início do site</a>
   </div>
-  <div v-else style="margin-top: 50px;">
-    <form  method="post" @submit.prevent="formTest">
+  <div v-else>
+    <div class="flex justify-center items-center">
+      <img class="m-5" src="/img/subscribe_form_top.png"/>
+    </div>
+    <div class="bg-orange-300 p-5 mb-5">
+    <h1 class="text-3xl">FICHA DE INSCRIÇÃO  para o CURSO DE FORMAÇÃO EM  YOGATERAPIA fundamentada no AYURVEDA -  Início em Abril de 2024</h1>
+    <br/><p>
+      Olá e bem-vindo ( a) ao CURSO DE FORMAÇÃO PROFISSIONAL EM  YOGATERAPIA fundamentada no AYURVEDA 2024 
+</p>
+      <p>Primeiro, a combinação da YOGATERAPIA  e do AYURVEDA permite que você explore diferentes aspectos do bem-estar e da saúde holisticamente. 
+      </p>
+        <p>A YOGATERAPIA é uma prática que utiliza posturas físicas, respiração e meditação etc.. para promover o equilíbrio e a cura do corpo e da mente. 
+        </p>
+          <p>Já o AYURVEDA é um sistema de medicina tradicional indiana que se concentra na harmonização dos elementos essenciais do corpo para promover a saúde e o equilíbrio.
+          </p>
+            <p>Ao fazer este CURSO , você terá a oportunidade de aprender técnicas e conceitos complementares que podem se beneficiar mutuamente. 
+            </p> <p>Por exemplo : 
+ Você poderá usar as posturas e técnicas de  aprendidas na YOGATERAPIA para fortalecer e equilibrar o seu corpo de acordo com os princípios do AYURVEDA.
+</p>
+ <p>Além disso, este curso poderá abrir portas para uma variedade de oportunidades profissionais num futuro próximo
+</p>
+  <p>Você poderá trabalhar como instrutor de yoga terapêutico combinando ambas as práticas em uma abordagem holística de tratamento para seus clientes.
+  </p>
+    <p>Fazer este curso será uma maneira eficiente e enriquecedora de expandir seus conhecimentos, habilidades e oportunidades profissionais. Estou aqui para ajudar caso você tenha mais perguntas ou precise de informações adicionais..
+    </p><br/>
+      <p>Atenciosamente<br/>
+Prof e Yoga Terapeuta<br/> 
+Pedro Paravyoma<br/> 
+        Contato 21 98066  1112</p>
+    </div>
+    
+    <form class="mt-5" method="post" @submit.prevent="formTest">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
         <div class="form-group row">
           <label for="nome" class="col-4 col-form-label">Nome completo</label> 
@@ -123,6 +153,9 @@ const formTest = async () => {
 
 label {  vertical-align: middle;
 } */
+p {
+  margin-bottom: 10px;
+}
 .form-field * {
     vertical-align: middle;
 }
