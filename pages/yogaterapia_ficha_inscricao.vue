@@ -6,9 +6,9 @@
   </div>
   <div v-else>
     <div class="flex justify-center items-center">
-      <img class="m-5" src="/img/subscribe_form_top.png"/>
+      <img class="m-2 rounded-lg" src="/img/subscribe_form_top.png"/>
     </div>
-    <div class="bg-orange-300 p-5 mb-5">
+    <div class="bg-orange-300 p-5 mb-5 rounded-lg text-lg text-neutral-900 font-normal border-solid border-t-[7px] border-orange-600">
     <h1 class="text-3xl">FICHA DE INSCRIÇÃO  para o CURSO DE FORMAÇÃO EM  YOGATERAPIA fundamentada no AYURVEDA -  Início em Abril de 2024</h1>
     <br/><p>
       Olá e bem-vindo ( a) ao CURSO DE FORMAÇÃO PROFISSIONAL EM  YOGATERAPIA fundamentada no AYURVEDA 2024 
@@ -35,7 +35,7 @@ Pedro Paravyoma<br/>
         Contato 21 98066  1112</p>
     </div>
     
-    <form class="mt-5" method="post" @submit.prevent="formTest">
+    <form class="mt-[25px]" method="post" @submit.prevent="formTest">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
         <div class="form-group row">
           <label for="nome" class="col-4 col-form-label">Nome completo</label> 
@@ -181,22 +181,30 @@ label, textarea, input[type=text] {
   display: block;
   /* margin-right: 100px;
   margin-left: 100px; */
+  border-radius: 7px;
+  border-color: #626262;
 }
 label {
   font-weight: bold;
   /* margin-right: 100px;
   margin-left: 100px; */
+  color: #3c2e2e;
+  margin-bottom: 5px;
 }
 input[type=text] , button{
-  border-color: #3c2e2e;
+  /* border-color: #3c2e2e; */
   border-style: solid;
   border-width: 1px;
-  padding: 10px;
+  padding: 7px;
+  border-radius: 7px;
+  border-color: #626262;
+  
 }
 
 button {
   margin-top: 10px;
   background-color: rgb(78, 144, 122);
+  padding: 10px;
 }
 
 div {
