@@ -36,6 +36,34 @@
           <div class="col-8">
             <input id="fone" name="fone" v-model="formData.fone" type="text" class="form-control">
           </div>
+        </div> <div>
+          <label for="telefone" class="col-4 col-form-label">Data de nascimento</label> 
+          <div class="col-8">
+            <input id="fone" name="fone" v-model="formData.nascimento" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <label for="formadepagamento" class="col-4 col-form-label">Forma de pagamento</label> 
+         
+          <input type="radio" v-model="formData.formadepagamento" value="pix" style="vertical-align: middle; margin-right: 5px;"> Pix até o dia 5 de cada mês (pode ser programado para alguma outra data do mês)<br/>
+          <input type="radio" v-model="formData.formadepagamento" value="cartao_avista" style="vertical-align: middle; margin-right: 5px;"> Cartão de débito via link<br/>
+          <input type="radio" v-model="formData.formadepagamento" value="cartao_credito_avista" style="vertical-align: middle; margin-right: 5px;"> Cartão de crédito à vista<br/>
+          <input type="radio" v-model="formData.formadepagamento" value="cartao_credito_parcelado" style="vertical-align: middle; margin-right: 5px;"> Cartão de crédito parcelado<br/>
+          <input type="radio" v-model="formData.formadepagamento" value="outros" style="vertical-align: middle; margin-right: 5px;"> Outros
+         <br/>
+          <ul style="margin-top: 20px;">
+            <li>Valor do curso: R$ 4.200,00</li>
+            <li>Pagamento integral à vista:  R$ 3.360,00 (20% de desconto)</li>
+            <li>Mensalidades: R$ 350,00</li>
+            <li>Se trouxer alunos (pagantes): 10% de desconto para cada aluno que trouxer</li>
+          </ul>
+           
+          
+          
+          
+         
+          <p style="margin-top: 20px;">Obs.: Todas as opções com cartão de crédito estão sujeitas a taxas do Pag Bank.</p>
+          <p>Obs2: Todos os que pagam mensalidade devem acertar até o dia 5 de cada mês (mesmo que seja com pix programado).</p>
         </div> 
       </div>
       <div class="form-group row">
@@ -51,14 +79,15 @@
 </template>
 <script setup>
 let formRegisterOk = ref(false)
-const formData = reactive({})
+const formData = reactive({
+  formadepagamento: null
+})
 const formTest = async () => {
 
   const isFormValid = true
   console.log(formData)
 
   if(isFormValid) { // Send the request only if there are no errors
-    console.log("sss");
     const data = await $fetch('api/go', {
       // mode: "no-cors",
       method: 'POST',
@@ -87,6 +116,16 @@ const formTest = async () => {
 
 </script>
 <style scoped>
+/* input[type=checkbox] {
+    margin-bottom: 4px;
+    vertical-align: middle;
+}
+
+label {  vertical-align: middle;
+} */
+.form-field * {
+    vertical-align: middle;
+}
 .container { 
     margin-left: 15%;
     margin-right:15%;
@@ -104,13 +143,18 @@ textarea {
   border-width: 1px;
   padding: 10px;
 }
-label, textarea, input {
+label, textarea, input[type=text] {
   width: 100%;
   display: block;
   /* margin-right: 100px;
   margin-left: 100px; */
 }
-input , button{
+label {
+  font-weight: bold;
+  /* margin-right: 100px;
+  margin-left: 100px; */
+}
+input[type=text] , button{
   border-color: #3c2e2e;
   border-style: solid;
   border-width: 1px;

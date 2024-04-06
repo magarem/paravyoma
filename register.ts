@@ -53,6 +53,9 @@ router
       email TEXT,
       endereco TEXT,
       fone TEXT
+      nascimento TEXT,
+      formadepagamento TEXT,
+      data TEXT
       )`);
     
     db.transaction(() => {
@@ -66,6 +69,9 @@ router
               '${user.email}', 
               '${user.endereco}', 
               '${user.fone}'
+              '${user.nascimento}'
+              '${user.formadepagamento}'
+              '${new Date().toLocaleDateString('pt-BR')}'
               )
       `);
     });
@@ -86,27 +92,3 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 await app.listen({ port: 8000 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // Open a database to be held in memory
- 
-
- 
-
- // Todo: Other CRUD operations here...
-
- // Close database to clean up resources
- 
