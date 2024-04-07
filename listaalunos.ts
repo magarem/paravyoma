@@ -1,3 +1,4 @@
+
 import { DB } from "https://deno.land/x/sqlite@v3.7.0/mod.ts";
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import {
@@ -16,20 +17,9 @@ const router = new Router();
 // Deno.serve(async (req) => {
  
 
-const db = new DB("teste.db"); // or new DB()
-router
-  .get("/lista", async (ctx: Context) => {
-   
-      // const lista = await db.query(`
-      //     select * from alunos;
-      // `);
-      // db.close()
 
-      // console.log('lista:', lista);
-      
-      const lista = {a:10}
-      // return "testando!"
-      ctx.response.body = lista
+router
+  .get("/users", async (ctx: Context) => {
   })
   .get("/users/:id", async (ctx: Context) => {
     const { id } = getQuery(ctx, { mergeParams: true });
@@ -53,7 +43,7 @@ router
   
     console.log('user:', user);
     
-    // const db = new DB("teste.db"); // or new DB()
+    const db = new DB("teste.db"); // or new DB()
     // Use new DB("file.db"); for a file-based database
     db.execute(`
       CREATE TABLE IF NOT EXISTS alunos (
@@ -97,7 +87,7 @@ router
   });
 
 const app = new Application();
-app.use(oakCors()); 
+// app.use(oakCors()); 
 app.use(router.routes());
 app.use(router.allowedMethods());
 
