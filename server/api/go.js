@@ -1,4 +1,6 @@
 export default defineEventHandler(async (event) => {
+
+  console.log('event:', event);
     const req = await readBody(event)
     console.log('req:', req);
 

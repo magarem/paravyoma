@@ -33,6 +33,7 @@
     "flowbite": "^1.8.1",
     "lite-youtube-embed": "^0.3.0",
     "vue-lite-youtube-embed": "^1.2.1",
-    "vue-screen": "^2.3.2"
+    "vue-screen": "^2.3.2",
+    "vue3-table-lite": "^1.4.0"
   }
 }

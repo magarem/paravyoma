@@ -1,4 +1,5 @@
-import { DB } from "https://deno.land/x/sqlite@v3.7.0/mod.ts";
+// import { DB } from "https://deno.land/x/sqlite@v3.7.0/mod.ts";
+import { Database } from "jsr:@db/sqlite@0.11";
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import {
   Application,
@@ -16,18 +17,18 @@ const router = new Router();
 // Deno.serve(async (req) => {
  
 
-const db = new DB("teste.db"); // or new DB()
 router
   .get("/lista", async (ctx: Context) => {
-   
+      const db = new Database("teste.db"); // or new DB()
       // const lista = await db.query(`
       //     select * from alunos;
       // `);
-      // db.close()
+      const lista = db.prepare("select * from alunos;").all()
+      db.close()
 
       // console.log('lista:', lista);
       
-      const lista = {a:10}
+      // const lista = {a:10}
       // return "testando!"
       ctx.response.body = lista
   })
@@ -40,9 +41,8 @@ router
   .get("/users/:id/address", async (ctx: Context) => {
     const { id } = getQuery(ctx, { mergeParams: true });
   })
-
   .post("/register", async (ctx: Context) => {
-
+    const db = new DB("teste.db"); // or new DB()
     console.log('/register');
     
     const body = ctx.request.body();
@@ -91,10 +91,10 @@ router
     // return "testando!"
     ctx.response.body = "ok"
   })
- 
   .delete("/users/:id", async (ctx: Context) => {
     const { id } = getQuery(ctx, { mergeParams: true });
   });
+
 
 const app = new Application();
 app.use(oakCors()); 
