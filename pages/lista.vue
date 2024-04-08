@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5 mb-5">
+  <div class="mx-[100px] mt-5 mb-5">
         <h1>Lista de alunos inscritos</h1>
         <table id="customers">
             <tr>
@@ -80,13 +80,21 @@
 // import data from "http://localhost:8000/lista/" assert {type: 'json'};
 // const data = await import("https://jsonplaceholder.typicode.com/posts", { assert: { type: "json" } })
     // onMounted(async () => {
-    const data = await $fetch('http://216.238.98.143:8000/lista/')
-    console.log('data:', data);
-    // table.rows = response.rows;
-    // table.totalRecordCount = response.count;
-    // table.sortable.order = order;
-    // table.sortable.sort = sort;
-    // })
+    // const data = await $fetch('http://localhost:3000/api/go2')
+   
+    const data = await $fetch('http://216.238.98.143:8000/lista', {
+      // mode: "no-cors",
+      method: 'GET',
+        headers: {
+          "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+          "Access-Control-Allow-Origin": "*",
+          'Access-Control-Allow-Credentials': 'true',
+          "Access-Control-Allow-Headers": '*',
+          "Access-Control-Expose-Headers": '*'
+        }
+    })
+
+    
 </script>
 <style scoped>
 /* input[type=checkbox] {
