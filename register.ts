@@ -42,7 +42,7 @@ router
     const { id } = getQuery(ctx, { mergeParams: true });
   })
   .post("/register", async (ctx: Context) => {
-    const db = new DB("teste.db"); // or new DB()
+    const db = new Database("teste.db"); // or new DB()
     console.log('/register');
     
     const body = ctx.request.body();
