@@ -1,5 +1,9 @@
 <template>
     <html lang="en">
+		<Head>
+			<Title>My App</Title>
+			<Meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		</Head>
         <Header title="testeheader" />
         <body>
             <Navigation />
