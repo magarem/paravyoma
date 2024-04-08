@@ -55,7 +55,7 @@ router
     
     // const db = new DB("teste.db"); // or new DB()
     // Use new DB("file.db"); for a file-based database
-    db.execute(`
+    db.exec(`
       CREATE TABLE IF NOT EXISTS alunos (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       nome TEXT,
@@ -69,7 +69,7 @@ router
       )`);
     const date_ = new Date().toLocaleDateString('pt-BR')
     db.transaction(() => {
-      db.query(`
+      db.prepare(`
           INSERT INTO alunos 
               (nome, cpf, email, endereco, fone, nascimento, formadepagamento, data) 
           VALUES 

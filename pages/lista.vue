@@ -80,7 +80,7 @@
 // import data from "http://localhost:8000/lista/" assert {type: 'json'};
 // const data = await import("https://jsonplaceholder.typicode.com/posts", { assert: { type: "json" } })
     // onMounted(async () => {
-    const data = await $fetch('http://localhost:8000/lista/')
+    const data = await $fetch('http://216.238.98.143:8000/lista/')
     console.log('data:', data);
     // table.rows = response.rows;
     // table.totalRecordCount = response.count;
