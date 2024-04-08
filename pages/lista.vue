@@ -9,7 +9,7 @@
                 <td v-for="tt in Object.values(t)">{{ tt }}</td>
             </tr>
         </table>
-        <button @click="vai">Vai</button>
+        <!-- <button @click="vai">Vai</button> -->
         <!-- {{ data }} -->
     </div>
 </template>
@@ -33,7 +33,8 @@ const vai = async () => {
     data.value = data_
     console.log("data------>:", data_);
 }
-    
+   
+   vai()
 </script>
 <style scoped>
 /* input[type=checkbox] {
