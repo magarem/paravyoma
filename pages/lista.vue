@@ -1,7 +1,7 @@
 <template>
   <div class="mx-[100px] mt-5 mb-5">
         <h1>Lista de alunos inscritos</h1>
-        <table id="customers">
+        <table id="customers" v-if="data">
             <tr>
                 <th v-for="tt in Object.keys(data[0])">{{ tt }}</th>
             </tr>
@@ -9,91 +9,30 @@
                 <td v-for="tt in Object.values(t)">{{ tt }}</td>
             </tr>
         </table>
+        <button @click="vai">Vai</button>
         <!-- {{ data }} -->
     </div>
 </template>
 <script setup>
-// import VueTableLite from "vue3-table-lite";
+let data = ref()
+const vai = async () => {
 
-// const table = reactive({
-//       isLoading: false,
-//       columns: [
-//         {
-//           label: "ID",
-//           field: "id",
-//           width: "3%",
-//           sortable: true,
-//           isKey: true,
-//         },
-//         {
-//           label: "Name",
-//           field: "nome",
-//           width: "10%",
-//           sortable: true,
-//         },
-//         {
-//           label: "Email",
-//           field: "email",
-//           width: "15%",
-//           sortable: true,
-//         },
-//         {
-//           label: "Cpf",
-//           field: "cpf",
-//           width: "10%",
-//           sortable: true,
-//           isKey: true,
-//         },
-//         {
-//           label: "Name",
-//           field: "endereco",
-//           width: "10%",
-//           sortable: true,
-//         },
-//         {
-//           label: "Fone",
-//           field: "fone",
-//           width: "15%",
-//           sortable: true,
-//         },
-//         {
-//           label: "Nascimento",
-//           field: "nascimento",
-//           width: "15%",
-//           sortable: true,
-//         },
-//         {
-//           label: "Pg",
-//           field: "formadepagamento",
-//           width: "15%",
-//           sortable: true,
-//         }
-//       ],
-//       rows: [],
-//       totalRecordCount: 0,
-//       sortable: {
-//         order: "id",
-//         sort: "asc",
-//       },
-//     });
-
-// import data from "http://localhost:8000/lista/" assert {type: 'json'};
-// const data = await import("https://jsonplaceholder.typicode.com/posts", { assert: { type: "json" } })
-    // onMounted(async () => {
-    // const data = await $fetch('http://localhost:3000/api/go2')
-   
-    const data = await $fetch('http://216.238.98.143:8000/lista/', {
+    const data_ = await $fetch('api/go2', {
       // mode: "no-cors",
-      method: 'GET',
+      method: 'POST',
         headers: {
           "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
           "Access-Control-Allow-Origin": "*",
           'Access-Control-Allow-Credentials': 'true',
           "Access-Control-Allow-Headers": '*',
           "Access-Control-Expose-Headers": '*'
-        }
+        },
+        body: JSON.stringify({a:10})
     })
 
+    data.value = data_
+    console.log("data------>:", data_);
+}
     
 </script>
 <style scoped>
