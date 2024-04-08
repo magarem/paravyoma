@@ -82,7 +82,7 @@
     // onMounted(async () => {
     // const data = await $fetch('http://localhost:3000/api/go2')
    
-    const data = await $fetch('http://216.238.98.143:8000/lista', {
+    const data = await $fetch('http://216.238.98.143:8000/lista/', {
       // mode: "no-cors",
       method: 'GET',
         headers: {
