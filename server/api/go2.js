@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
       const req = await readBody(event)
       console.log('req:', req);
   
-      const data = await $fetch('http://216.238.98.143:8001/lista/', {
+      const data = await $fetch('http://216.238.98.143:8000/lista/', {
         // mode: "no-cors",
         method: 'POST',
           headers: {
