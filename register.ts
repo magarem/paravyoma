@@ -68,24 +68,29 @@ router
       data TEXT
       )`);
     const date_ = new Date().toLocaleDateString('pt-BR')
-    db.transaction(() => {
-      db.prepare(`
-          INSERT INTO alunos 
-              (nome, cpf, email, endereco, fone, nascimento, formadepagamento, data) 
-          VALUES 
-              (
-              '${user.nome}', 
-              '${user.cpf}', 
-              '${user.email}', 
-              '${user.endereco}', 
-              '${user.fone}',
-              '${user.nascimento}',
-              '${user.formadepagamento}',
-              '${date_}'
-              )
-      `);
-    });
-      
+
+    const sql = `
+      INSERT INTO alunos 
+          (nome, cpf, email, endereco, fone, nascimento, formadepagamento, data) 
+      VALUES 
+          (
+          '${user.nome}', 
+          '${user.cpf}', 
+          '${user.email}', 
+          '${user.endereco}', 
+          '${user.fone}',
+          '${user.nascimento}',
+          '${user.formadepagamento}',
+          '${date_}'
+          )
+    `
+    
+    console.log('sql:', sql);
+
+    // db.transaction(() => {
+    //   db.prepare(sql);
+    // });
+    db.exec(sql);
     db.close()
   
     // return "testando!"
@@ -101,4 +106,4 @@ app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-await app.listen({ port: 8001 });
+await app.listen({ port: 8000 });
