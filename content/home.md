@@ -3,7 +3,7 @@ title: "Yogaterapia e ayurveda curso de formação"
 img: "/assets/images/yogaterapia.png"
 links:
     - label: "Quero participar"
-      target: "mailto:m@dd.com"
+      target: "/yogaterapia_ficha_inscricao"
     - label: "Baixar PDF"
       target: "https://cnpshgwzdbksvpxpyyuc.supabase.co/storage/v1/object/public/files/clhdtusbo0000lbyc6y8yntkc//f0e91397-c18e-45d0-bbe1-5e22fbdcf580-yOGATERAPIA_2022_v03%20(1).pdf"
 ---
