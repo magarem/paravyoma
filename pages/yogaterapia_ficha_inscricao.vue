@@ -9,9 +9,9 @@
       <img class="m-2 rounded-lg" src="/img/subscribe_form_top.png"/>
     </div>
     <div class="bg-orange-300 p-5 mb-5 rounded-lg text-lg text-neutral-900 font-normal border-solid border-t-[7px] border-orange-600">
-    <h1 class="text-3xl">FICHA DE INSCRIÇÃO  para o CURSO DE FORMAÇÃO EM  YOGATERAPIA fundamentada no AYURVEDA -  Início em Abril de 2024</h1>
+    <h1 class="text-3xl">FICHA DE INSCRIÇÃO  para o CURSO DE FORMAÇÃO EM  YOGATERAPIA fundamentada no AYURVEDA -  Início em Abril de 2025</h1>
     <br/><p>
-      Olá e bem-vindo ( a) ao CURSO DE FORMAÇÃO PROFISSIONAL EM  YOGATERAPIA fundamentada no AYURVEDA 2024 
+      Olá e bem-vindo ( a) ao CURSO DE FORMAÇÃO PROFISSIONAL EM  YOGATERAPIA fundamentada no AYURVEDA 2025 
 </p>
       <p>Primeiro, a combinação da YOGATERAPIA  e do AYURVEDA permite que você explore diferentes aspectos do bem-estar e da saúde holisticamente. 
       </p>
