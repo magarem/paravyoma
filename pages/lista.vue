@@ -9,7 +9,7 @@
                 <td v-for="tt in Object.values(t)">{{ tt }}</td>
             </tr>
         </table>
-        <button @click="vai">Listar anulos inscritos</button>
+        <button @click="vai">Listar alulos inscritos</button>
         <!-- {{ data }} -->
     </div>
 </template>
