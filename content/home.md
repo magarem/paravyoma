@@ -1,17 +1,17 @@
 ---
 title: "Yogaterapia e ayurveda curso de formação"
-img: "/assets/images/yogaterapia.png"
+img: "/assets/images/yogaterapia.jpeg"
 links:
     - label: "Quero participar"
-      target: "/yogaterapia_ficha_inscricao"
+      target: "mailto:m@dd.com"
     - label: "Baixar PDF"
-      target: "https://cnpshgwzdbksvpxpyyuc.supabase.co/storage/v1/object/public/files/clhdtusbo0000lbyc6y8yntkc//f0e91397-c18e-45d0-bbe1-5e22fbdcf580-yOGATERAPIA_2022_v03%20(1).pdf"
+      target: "Yogaterapia_apresentacao.pdf"
 ---
 YOGATERAPIA é o método terapêutico utilizado para cuidar de um ou mais distúrbios específicos, seja no conceito ayurvédico (vata, pita, kapha), seja no conceito do yoga, seja do ponto de vista alopático – na forma de limitações e patologias físicas e/ou emocionais.
 
-## Promoção Especial: Curso de Formação Profissional em Yogaterapia e Ayurveda 2024!
+## Promoção Especial: Curso de Formação Profissional em Yogaterapia e Ayurveda 2025!
 
-Você está pronto para mergulhar em uma jornada de autoconhecimento e transformação? Temos uma promoção especial para você! Nosso Curso de Formação Profissional em Yogaterapia e Ayurveda está com descontos imperdíveis para o ano de 2024.
+Você está pronto para mergulhar em uma jornada de autoconhecimento e transformação? Temos uma promoção especial para você! Nosso Curso de Formação Profissional em Yogaterapia e Ayurveda está com descontos imperdíveis para o ano de 2025.
 
 Durante esse curso abrangente, você irá adquirir todo o conhecimento necessário para se tornar um profissional qualificado em Yogaterapia e Ayurveda. Essas antigas práticas holísticas têm o poder de equilibrar mente, corpo e espírito, promovendo bem-estar e saúde em todos os níveis.
 
